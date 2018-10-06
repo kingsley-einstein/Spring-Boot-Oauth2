@@ -1,0 +1,11 @@
+#Ignore paths 
+
+/src/test 
+
+.settings/ 
+
+/target/ 
+
+/.classpath 
+
+/.project  
