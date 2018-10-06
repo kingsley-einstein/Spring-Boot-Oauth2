@@ -10,7 +10,3 @@ spring:
         show-sql: true
         hibernate:
             ddl-auto: update
-#security:
-    #user:
-        #name: kingsley
-        #password: einstein1998
