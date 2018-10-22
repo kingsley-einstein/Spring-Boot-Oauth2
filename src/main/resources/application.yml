@@ -2,6 +2,13 @@ server:
     port: 9000
     
 spring:
+    servlet:
+        multipart:
+            enabled: true
+            max-file-size: 200MB
+            max-request-size: 215MB
+            file-size-threshold: 2KB
+
     datasource:
         url: jdbc:mysql://localhost:3306/userdb
         username: root

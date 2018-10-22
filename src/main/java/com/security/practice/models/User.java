@@ -10,6 +10,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.CascadeType;
 import javax.validation.constraints.NotBlank;
 import javax.persistence.Transient;
+import javax.persistence.OneToOne;
 //import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.List;
@@ -37,6 +38,9 @@ public class User implements java.io.Serializable {
     @NotBlank
     @Column(nullable = false, unique = true)
     private String email;
+
+    @OneToOne(mappedBy = "owner", cascade = CascadeType.ALL)
+    ProfilePic pic;
     
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
     private List<Book> books;
@@ -102,6 +106,14 @@ public class User implements java.io.Serializable {
     
     public List<GrantedAuthority> getGrantedAuthoritiesList() {
         return grantedAuthoritiesList;
+    }
+
+    public void setPic(ProfilePic pic) {
+        this.pic = pic;
+    }
+
+    public ProfilePic getPic() {
+        return pic;
     }
     
 } 
